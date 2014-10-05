@@ -11,9 +11,7 @@ About Janus:
 
 If you don't want to build it, simply pull the image:
 
-````
-sudo docker pull matttbe/janus-node
-````
+    sudo docker pull matttbe/janus-node
 
 ## How to build?
 
