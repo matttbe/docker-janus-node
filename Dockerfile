@@ -22,6 +22,8 @@ RUN npm install
 
 # Config
 ADD default.yml /home/janus/node-janus/config/default.yml
+ADD key.pem /home/janus/node-janus/keys/key.pem
+ADD crt.pem /home/janus/node-janus/keys/crt.pem
 
 # Launch
 CMD ["./proxy"]
