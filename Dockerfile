@@ -6,7 +6,7 @@ FROM     ubuntu:14.04
 MAINTAINER Matthieu Baerts "matttbe@gmail.com"
 
 # Dependences
-RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y build-essential libav-tools nasm nodejs npm git libpng12-dev node-nan autoconf automake libtool nodejs-legacy
+RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y build-essential libav-tools nasm nodejs npm git libpng12-dev autoconf automake libtool nodejs-legacy
 
 # Create user
 RUN useradd -d /home/janus -m janus
