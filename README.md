@@ -35,7 +35,8 @@ As previously said, it's maybe better to build it by yourself to be sure that yo
 
 
 ### Settings
-If you need to change some settings, do it now by editing `default.yml` file (I just reduced the output messages compared to the original `default.yml` file)
+If you need to change some settings, do it now by editing `default.yml` file (I just reduced the output messages compared to the original `default.yml` file).
+Note that by default, cache aren't enabled.
 
 ### Keys and certificate
 You will need to add your own key and certificate. If you want to use yours, simply launch the `genkey.sh` script or:
@@ -56,4 +57,15 @@ Now you build the image by using `build.sh` script or:
 You can simply launch it as any other docker image but don't forget to redirect ports, e.g.:
 
     sudo docker run -d -p 0.0.0.0:55055:55055 -p 0.0.0.0:55155:55155 -P --name janus matttbe/janus-node
+
+## How to use it on Firefox
+After having installed Janus Proxy Configurator module:
+
+* Open the configuration panel for this module, e.g.:
+ * For Firefox for Android: Go to the top right menu: Tools / Additional Modules / Janus Proxy Configurator
+ * For Firefox on GNU/Linux: Tools menu / Additional Modules / Janux Proxy Configurator
+* Change the PAC URL with the port of your PAC server, e.g.: `http://example.com:55155`
+* (Re)Enable the proxy
+* If you're using a self-signed certificate, always accept it by opening the address of your proxy server with the correct port, e.g.: `http://example.com:55055`
+* And... Voilà!
 
