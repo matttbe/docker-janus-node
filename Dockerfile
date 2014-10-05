@@ -1,0 +1,28 @@
+# janus-node
+#
+# VERSION               0.0.1
+
+FROM     ubuntu:14.04
+MAINTAINER Matthieu Baerts "matttbe@gmail.com"
+
+# Dependences
+RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y build-essential libav-tools nasm nodejs npm git libpng12-dev node-nan autoconf automake libtool nodejs-legacy
+
+# Create user
+RUN useradd -d /home/janus -m janus
+USER janus
+WORKDIR /home/janus
+
+# Get node-janus
+RUN git clone https://github.com/MPTCP-smartphone-thesis/node-janus
+
+# Compile it
+WORKDIR node-janus
+RUN npm install
+
+# Config
+ADD default.yml config/default.yml
+
+# Launch
+CMD ["./proxy"]
+
