@@ -2,19 +2,19 @@
 logging:
   # The minimum logging level for console messages
   # (via Winston, https://github.com/flatiron/winston).
-  level: debug
+  level: warn
   # Whether or not to colorize console logging.
   colorize: true
   console:
     enabled: true
-    level: debug
+    level: warn
     timestamp: false
     # Whether or not to colorize console logging.
     colorize: true
 
   file:
     enabled: true
-    level: debug
+    level: warn
     timestamp: true
     # Maximum size of the log file before it is rolled over in MB.
     maxSize: 20
@@ -79,7 +79,7 @@ dom:
 # fork plugin, streams the source stream directly to the destination stream and
 # to the response chain for further processing.
 fork:
-  enabled: false
+  enabled: true
   optional: true
 
 # ingress plugin, reads data from the forwarded response.
@@ -179,7 +179,7 @@ video:
 
 # Metrics reporting settings.
 metrics:
-  enabled: true
+  enabled: false
   # All update interval settings are in seconds.
   # General system metrics settings.
   system:
