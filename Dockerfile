@@ -21,7 +21,7 @@ WORKDIR node-janus
 RUN npm install
 
 # Config
-ADD default.yml config/default.yml
+ADD default.yml /home/janus/node-janus/config/default.yml
 
 # Launch
 CMD ["./proxy"]
