@@ -11,7 +11,7 @@ About Janus:
 
 If you don't want to build it, simply pull the image:
 
-    sudo docker pull matttbe/janus-node
+    sudo docker pull matttbe/docker-janus-node
 
 But this image will contain generic key and generic configuration. It's maybe better to build it by yourself!
 Of course, it's always possible to pull this image and launch it with `bash` to update the system and change keys and certificate:
