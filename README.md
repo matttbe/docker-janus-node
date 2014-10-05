@@ -13,9 +13,20 @@ If you don't want to build it, simply pull the image:
 
     sudo docker pull matttbe/janus-node
 
+But this image will contain generic key and generic configuration. It's maybe better to build it by yourself!
+Of course, it's always possible to pull this image and launch it with `bash` to update the system and change keys and certificate:
+
+    sudo docker run -u 0 -t -i -p 0.0.0.0:55055:55055 -p 0.0.0.0:55155:55155 -P --name janus matttbe/janus-node bash
+    apt-get update && apt-get dist-upgrade -y
+    su - janus
+    cd node-janus
+    vi config/default.yml
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout keys/key.pem -out keys/crt.pem
+    ./proxy
+
 ## How to build?
 
-It's maybe better to build it by yourself (to be sure that you're using the latest stable version of all packages).
+As previously said, it's maybe better to build it by yourself to be sure that you're using the latest stable version of all packages with your own key and certificate and with the options that you want.
 
 ### Clone this repository:
 
