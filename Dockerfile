@@ -1,8 +1,8 @@
 # janus-node
 #
-# VERSION               0.0.1
+# VERSION 0.0.1
 
-FROM     ubuntu:14.04
+FROM ubuntu:14.04
 MAINTAINER Matthieu Baerts "matttbe@gmail.com"
 
 # Dependences
@@ -14,7 +14,7 @@ USER janus
 WORKDIR /home/janus
 
 # Get node-janus
-RUN git clone https://github.com/MPTCP-smartphone-thesis/node-janus
+RUN git clone https://github.com/mozilla/node-janus
 
 # Compile it
 WORKDIR node-janus
